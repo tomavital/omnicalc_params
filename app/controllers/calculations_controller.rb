@@ -22,6 +22,12 @@ class CalculationsController <ApplicationController
     @square = c.round
     render("calculations/flex_payment_5.html.erb")
   end
+  def flex_random_5
+    @user_min = params["num"].to_i
+    @user_max = params["sec"].to_i
+    @square = rand(@user_max-@user_min)+@user_min
+    render("calculations/flex_random_5.html.erb")
+  end
   def square
     @user_number = params[:user_number].to_f
     @square = @user_number **2
