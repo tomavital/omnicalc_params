@@ -16,8 +16,12 @@ class CalculationsController <ApplicationController
     # @square = @user_number **0.5
     render("calculations/flex_square_root_5.html.erb")
   end
-
+  def square
+    @user_number = params[:user_number].to_f
+    @square = @user_number **2
+    render("calculations/square.html.erb")
+  end
   def square_form
-    render("calculations/square_form.html.erb")
+      render("calculations/square_form.html.erb")
   end
 end
