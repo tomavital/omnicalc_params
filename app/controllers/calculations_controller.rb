@@ -10,10 +10,13 @@ class CalculationsController <ApplicationController
     render("calculations/flex_square_root_5.html.erb")
   end
   def flex_payment_5
-    @user_number = params["num"].to_f
-    @user_another = params["another"].to_f
-    @user_third = params["third"].to_f
-    # @square = @user_number **0.5
+    apr = params["int"].to_f/100/100/12
+    year = params["year"].to_f*12
+    amount = params["amount"].to_f
+    a=(1+apr)**(-year)
+    b=apr*amount
+    c= b/(1-a)
+    @square = c
     render("calculations/flex_square_root_5.html.erb")
   end
   def square
