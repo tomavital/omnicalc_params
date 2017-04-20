@@ -10,14 +10,17 @@ class CalculationsController <ApplicationController
     render("calculations/flex_square_root_5.html.erb")
   end
   def flex_payment_5
+    @interest = params["int"].to_f/100
+    @amount = params["amount"].to_i
+    @year = params["year"].to_i
     apr = params["int"].to_f/100/100/12
-    year = params["year"].to_f*12
-    amount = params["amount"].to_f
-    a=(1+apr)**(-year)
-    b=apr*amount
+    ye = params["year"].to_f*12
+    am = params["amount"].to_f
+    a=(1+apr)**(-ye)
+    b=apr*am
     c= b/(1-a)
-    @square = c
-    render("calculations/flex_square_root_5.html.erb")
+    @square = c.round
+    render("calculations/flex_payment_5.html.erb")
   end
   def square
     @user_number = params[:user_number].to_f
@@ -25,6 +28,6 @@ class CalculationsController <ApplicationController
     render("calculations/square.html.erb")
   end
   def square_form
-      render("calculations/square_form.html.erb")
+    render("calculations/square_form.html.erb")
   end
 end
