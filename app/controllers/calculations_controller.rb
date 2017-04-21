@@ -49,4 +49,22 @@ class CalculationsController <ApplicationController
     render ("calculations/square_root_results.html.erb")
   end
 
+  def payment_form
+    render ("calculations/payment_form.html.erb")
+  end
+
+  def payment
+    @interest = params["int"].to_f/100
+    @amount = params["amount"].to_i
+    @year = params["year"].to_i
+    apr = params["int"].to_f/100/100/12
+    ye = params["year"].to_f*12
+    am = params["amount"].to_f
+    a=(1+apr)**(-ye)
+    b=apr*am
+    c= b/(1-a)
+    @square = c.round(2)
+  
+    render ("calculations/payment_results.html.erb")
+  end
 end
