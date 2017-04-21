@@ -54,10 +54,10 @@ class CalculationsController <ApplicationController
   end
 
   def payment
-    @interest = params["int"].to_f/100
+    @interest = params["int"].to_f
     @amount = params["amount"].to_i
     @year = params["year"].to_i
-    apr = params["int"].to_f/100/100/12
+    apr = params["int"].to_f/100/12
     ye = params["year"].to_f*12
     am = params["amount"].to_f
     a=(1+apr)**(-ye)
