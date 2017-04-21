@@ -63,7 +63,7 @@ class CalculationsController <ApplicationController
     a=(1+apr)**(-ye)
     b=apr*am
     c= b/(1-a)
-    @square = c.round(2).to_s
+    @square = c.round(2)
 
     render ("calculations/payment_results.html.erb")
   end
