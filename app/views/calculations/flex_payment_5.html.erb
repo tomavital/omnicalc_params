@@ -1,1 +1,1 @@
-<h1> A <%= @year %> year loan of <%= @amount %>, with an annual interest rate of <%= @interest %>% requires a monthly payment of  $<%= @square %> </h1>
+<h1> A <%= @year %> year loan of <%= @amount %>, with an annual interest rate of <%= @interest %>% requires a monthly payment of </h1> <%= number_to_currency(@square) %> 
