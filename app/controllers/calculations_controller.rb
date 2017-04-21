@@ -64,7 +64,20 @@ class CalculationsController <ApplicationController
     b=apr*am
     c= b/(1-a)
     @square = c.round(2)
-  
+
     render ("calculations/payment_results.html.erb")
+  end
+
+  def random_form
+    render ("calculations/random_form.html.erb")
+  end
+
+  def random
+    @min= params["min"].to_i
+    @max = params["max"].to_i
+
+    @square = rand(@max-@min)+@min
+
+    render ("calculations/random_results.html.erb")
   end
 end
