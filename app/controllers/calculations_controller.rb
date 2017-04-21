@@ -19,7 +19,7 @@ class CalculationsController <ApplicationController
     a=(1+apr)**(-ye)
     b=apr*am
     c= b/(1-a)
-    @square = c.round
+    @square = c.round(2)
     render("calculations/flex_payment_5.html.erb")
   end
   def flex_random_5
