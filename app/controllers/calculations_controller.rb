@@ -73,10 +73,10 @@ class CalculationsController <ApplicationController
   end
 
   def random
-    @min= params["min"].to_i
-    @max = params["max"].to_i
+    @min= params["min"].to_f
+    @max = params["max"].to_f
 
-    @square = rand(@max-@min)+@min
+    @square = (rand()*(@max-@min)+@min).round(2)
 
     render ("calculations/random_results.html.erb")
   end
