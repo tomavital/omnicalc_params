@@ -1,15 +1,15 @@
 class CalculationsController <ApplicationController
-  def flex_square_5
+  def flex_square
     @user_number = params["num"].to_f
     @square = @user_number **2
-    render("calculations/flex_square_5.html.erb")
+    render("calculations/flex_square.html.erb")
   end
-  def flex_square_root_5
+  def flex_square_root
     @user_number = params["num"].to_f
     @square = (@user_number **0.5).round(2)
-    render("calculations/flex_square_root_5.html.erb")
+    render("calculations/flex_square_root.html.erb")
   end
-  def flex_payment_5
+  def flex_payment
     @interest = params["int"].to_f/100
     @amount = params["amount"].to_i
     @year = params["year"].to_i
@@ -20,13 +20,13 @@ class CalculationsController <ApplicationController
     b=apr*am
     c= b/(1-a)
     @square = c.round(2)
-    render("calculations/flex_payment_5.html.erb")
+    render("calculations/flex_payment.html.erb")
   end
-  def flex_random_5
+  def flex_random
     @user_min = params["num"].to_i
     @user_max = params["sec"].to_i
     @square = rand(@user_max-@user_min)+@user_min
-    render("calculations/flex_random_5.html.erb")
+    render("calculations/flex_random.html.erb")
   end
 
   def square_form
