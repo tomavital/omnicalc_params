@@ -80,4 +80,6 @@ class CalculationsController <ApplicationController
 
     render ("calculations/random_results.html.erb")
   end
+
+
 end
